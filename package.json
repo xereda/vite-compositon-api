@@ -4,7 +4,7 @@
   "scripts": {
     "build": "vite build",
     "lint": "vue-cli-service lint",
-    "dev": "vite"
+    "dev": "vite --open"
   },
   "dependencies": {
     "bulma": "^0.9.0",
