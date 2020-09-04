@@ -1,39 +1,27 @@
 <template>
-  <section class="hero is-dark">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          Vue Composition API
-        </h1>
-        <h2 class="subtitle">God save The <strong>Evan You</strong>!</h2>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          <h4 class="title is-4">Options API</h4>
-          <options-api />
-        </div>
-        <div class="column">
-          <h4 class="title is-4">Composition API</h4>
-          <composition-api />
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-header />
+  <app-main>
+    <simple-increase />
+    <todo-list />
+  </app-main>
+  <app-footer />
 </template>
 
 <script>
-import OptionsApi from './components/options-api.vue';
-import CompositionApi from './components/composition-api.vue';
+import AppFooter from './components/app-footer.vue';
+import AppHeader from './components/app-header.vue';
+import AppMain from './components/app-main.vue';
+import SimpleIncrease from './examples/simple-increase/index.vue';
+import TodoList from './examples/todo-list/index.vue';
 
 export default {
   name: 'App',
   components: {
-    OptionsApi,
-    CompositionApi,
+    AppMain,
+    AppFooter,
+    AppHeader,
+    SimpleIncrease,
+    TodoList,
   },
 };
 </script>

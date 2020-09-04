@@ -6,16 +6,15 @@
 
 <script>
 export default {
-  name: "SimpleIncreaseOptionsAPI",
   data() {
     return {
-      count: 0
+      count: 0,
     };
   },
   methods: {
     increase() {
       this.count++;
-    }
-  }
+    },
+  },
 };
 </script>
