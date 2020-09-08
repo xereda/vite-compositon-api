@@ -3,6 +3,7 @@
   <app-main>
     <simple-increase />
     <todo-list />
+    <levels />
   </app-main>
   <app-footer />
 </template>
@@ -13,6 +14,7 @@ import AppHeader from './components/app-header.vue';
 import AppMain from './components/app-main.vue';
 import SimpleIncrease from './examples/simple-increase/index.vue';
 import TodoList from './examples/todo-list/index.vue';
+import Levels from './examples/levels/index.vue';
 
 export default {
   name: 'App',
@@ -22,6 +24,7 @@ export default {
     AppHeader,
     SimpleIncrease,
     TodoList,
+    Levels,
   },
 };
 </script>

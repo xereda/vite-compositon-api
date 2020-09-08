@@ -1,40 +1,30 @@
 <template>
-  <div class="field has-addons">
-    <div class="control">
-      <input
-        class="input"
-        type="text"
-        placeholder="Type a task"
-        ref="descriptionTask"
-        :value="descriptionTask"
-        @input="onTypingTask"
-        @keyup.enter="addTask"
-      />
-    </div>
-    <div class="control">
-      <a class="button is-danger" @click="addTask">
-        Add
-      </a>
-    </div>
-  </div>
-  <div class="field is-grouped is-grouped-multiline">
-    <div v-for="task in tasks" :key="task.index" class="control">
-      <div class="tags has-addons">
-        <a
-          class="tag is-danger "
-          :class="{ 'is-light': task.done, 'task-done': task.done }"
-          @click="onChangeTaskStatus(task)"
-        >
-          {{ task.description }}
-        </a>
-        <a class="tag is-delete" @click="removeTask(task.index)" />
-      </div>
-    </div>
-  </div>
+  <field-group
+    with-button
+    placeholder="Type a task..."
+    theme="is-danger"
+    :value="descriptionTask"
+    @input="onTypingTask"
+    @click="addTask"
+  >
+    <tags-group
+      theme="is-danger"
+      :tags="tasks"
+      @change="onChangeTaskStatus"
+      @remove="removeTask"
+    />
+  </field-group>
 </template>
 
 <script>
+import FieldGroup from '../../components/field-group.vue';
+import TagsGroup from '../../components/tags-group.vue';
+
 export default {
+  components: {
+    FieldGroup,
+    TagsGroup,
+  },
   data() {
     return {
       descriptionTask: '',
@@ -54,15 +44,12 @@ export default {
         ];
         this.descriptionTask = '';
       }
-
-      this.$refs.descriptionTask.focus();
     },
     removeTask(taskIndex) {
-      console.log(taskIndex);
       this.tasks = [...this.tasks.filter(task => task.index !== taskIndex)];
     },
-    onTypingTask({ target }) {
-      this.descriptionTask = target?.value;
+    onTypingTask(inputValue) {
+      this.descriptionTask = inputValue;
     },
     onChangeTaskStatus(targetTask) {
       const filteredTasks = this.tasks.filter(
@@ -80,9 +67,3 @@ export default {
   },
 };
 </script>
-
-<style lang="css" scoped>
-.task-done {
-  text-decoration: line-through;
-}
-</style>
