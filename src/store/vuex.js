@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import levels from '../examples/levels/vuex-store.js';
 
 const state = { count: 0 };
 
@@ -26,5 +27,7 @@ export default createStore({
   state,
   actions,
   mutations,
-  modules: {},
+  modules: {
+    levels,
+  },
 });
