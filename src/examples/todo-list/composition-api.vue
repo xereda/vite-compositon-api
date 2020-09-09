@@ -13,11 +13,11 @@
       @change="onChangeTaskStatus"
       @remove="removeTask"
     />
-    <!-- <ul>
+    <ul>
       <li v-for="task in sortedByChar" :key="task.index">
         {{ task.description }}
       </li>
-    </ul> -->
+    </ul>
   </field-group>
 </template>
 
@@ -25,6 +25,7 @@
 import { ref, computed } from 'vue';
 import FieldGroup from '../../components/field-group.vue';
 import TagsGroup from '../../components/tags-group.vue';
+import { useSorting } from './sorting.js';
 
 export default {
   components: {
@@ -72,9 +73,7 @@ export default {
       tasks.value = [...tasks.value.filter(task => task.index !== taskIndex)];
     }
 
-    // const sortedByChar = computed(() =>
-    //   [...tasks.value].sort((a, b) => (a.description > b.description ? 1 : -1)),
-    // );
+    const sortedByChar = useSorting(tasks);
 
     return {
       descriptionTask,
@@ -83,7 +82,7 @@ export default {
       addTask,
       onChangeTaskStatus,
       removeTask,
-      // sortedByChar,
+      sortedByChar,
     };
   },
 };

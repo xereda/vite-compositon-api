@@ -1,4 +1,4 @@
-import { reactive, toRefs, computed } from 'vue';
+import { reactive, toRefs, computed, readonly } from 'vue';
 
 const state = reactive({
   description: '',
@@ -20,4 +20,9 @@ function setSelectedOption(option) {
   state.selectedOption = option;
 }
 
-export default { ...toRefs(state), onTyping, addOption, setSelectedOption };
+export default {
+  ...toRefs(readonly(state)),
+  onTyping,
+  addOption,
+  setSelectedOption,
+};

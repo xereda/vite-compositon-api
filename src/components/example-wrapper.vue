@@ -17,6 +17,5 @@ export default {
   props: {
     title: String,
   },
-  setup(props) {},
 };
 </script>

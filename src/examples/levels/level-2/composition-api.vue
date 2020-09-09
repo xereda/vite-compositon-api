@@ -26,7 +26,7 @@
 <script>
 import useState from '../use-state.js';
 import Level3Modal from './level-3/compositon-api.vue';
-import { ref, readonly } from 'vue';
+import { ref } from 'vue';
 
 export default {
   components: {
@@ -49,14 +49,14 @@ export default {
       showModal.value = true;
     }
 
-    return readonly({
+    return {
       options,
       onChangeSelectOption,
       showModal,
       closeModal,
       openModal,
       optionsSize,
-    });
+    };
   },
 };
 </script>
