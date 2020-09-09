@@ -6,7 +6,7 @@
           Vue Composition API
         </h1>
         <h2 class="subtitle">
-          God save The <strong>Evan You</strong> (and your team)!
+          God save The <strong>Evan You</strong> (and his team)!
         </h2>
       </div>
     </div>
