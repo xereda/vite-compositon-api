@@ -1,6 +1,6 @@
 <template>
-  <button class="button is-danger" @click="increase">
-    increasing {{ count }}
+  <button class="button is-danger" @click="increment">
+    Increment {{ count }}
   </button>
 </template>
 
@@ -12,7 +12,7 @@ export default {
     };
   },
   methods: {
-    increase() {
+    increment() {
       this.count++;
     },
   },

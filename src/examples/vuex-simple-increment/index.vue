@@ -1,5 +1,5 @@
 <template>
-  <example-wrapper title="Simple Increase">
+  <example-wrapper title="VUEX Simple Increment">
     <template v-slot:options-api>
       <options-api />
     </template>
@@ -17,8 +17,8 @@ import ExampleWrapper from '../../components/example-wrapper.vue';
 export default {
   components: {
     CompositionApi,
-    OptionsApi,
     ExampleWrapper,
+    OptionsApi,
   },
 };
 </script>

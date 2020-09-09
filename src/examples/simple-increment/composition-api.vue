@@ -1,6 +1,6 @@
 <template>
-  <button class="button is-info" @click="increase">
-    increasing {{ count }}
+  <button class="button is-info" @click="increment">
+    Increment {{ count }}
   </button>
 </template>
 
@@ -11,11 +11,11 @@ export default {
   setup() {
     const count = ref(0);
 
-    function increase() {
+    function increment() {
       count.value++;
     }
 
-    return { count, increase };
+    return { count, increment };
   },
 };
 </script>
